@@ -25,8 +25,25 @@ public class StructCtrlTest {
         System.out.println("****");// A=+, B=-, C=/, D=*
         System.out.println("A Addition");
         System.out.println("B Soustraction");
+        System.out.println("C Division");
+        System.out.println("D Multiplication");
         String choix = "C";// En vrai on aurait une entrée clavier ; )
-        
+        int res;
+        if( choix=="C" ){
+            res=a+b;
+            assertEquals(res, 12);
+        }else if( choix=="B" ){
+            res=a-b;
+            assertEquals(res, 8);
+        }else if( choix=="C" ){
+            res=a/b;
+            assertEquals(res, 5);
+        }else if( choix=="D" ){
+            res=a*b;
+            assertEquals(res, 20);
+        }else{
+            fail("Opération non prévue");
+        }
     }
     
     @Test
