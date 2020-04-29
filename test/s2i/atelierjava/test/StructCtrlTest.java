@@ -16,6 +16,21 @@ import org.testng.annotations.Test;
 public class StructCtrlTest {
 
     @Test
+    public void doWhileOK(){
+        String choix;
+        do{
+            System.out.println("Menu");
+            System.out.println("----");
+            System.out.println("A action 1");
+            System.out.println("B action 2");
+            System.out.println("Q quitter");
+            
+            // Entrée clavier
+            choix = "Q";
+        } while(choix!="Q");
+    }
+    
+    @Test
     public void whileSommeDeUnADixEgal55OK(){
         
         int somme = 0;
