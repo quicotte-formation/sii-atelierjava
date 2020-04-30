@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package s2i.atelierjava.test;
+package s2i.atelierjava.test.langage;
 
 import java.util.HashMap;
 import org.testng.Assert;
