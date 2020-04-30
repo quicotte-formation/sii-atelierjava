@@ -5,9 +5,8 @@
  */
 package s2i.atelierjava.test;
 
-import com.sun.tools.javac.util.StringUtils;
-import java.util.Arrays;
-import java.util.List;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 import static org.testng.Assert.*;
 import org.testng.annotations.Test;
 
@@ -18,14 +17,41 @@ import org.testng.annotations.Test;
 public class StringTest {
     
     @Test
-    public void regexOK(){
-        String prenomNom = "thomas digna";
-        String regex = "[a-z]*";//[0][1-8][[:alnum:]]{8} : téléphone
-        
-        //String tel = "0665831322";
+    public void splitDateOK(){
+        Pattern p = Pattern.compile("([0-9]{1,2})/([0-9]{1,2})/([0-9]{4})");
+        Matcher m = p.matcher("30/4/2020");
+        m.find();
+        assertEquals( m.group(1) , "30");
+        assertEquals( m.group(2) , "4");
+        assertEquals( m.group(3) , "2020");
     }
     
     @Test
+    public void regexSplitOK(){
+        Pattern p = Pattern.compile("([\\p{Alnum}]{2,}@)([a-zA-Z0-9_-]{2,}.[a-z]{2,})");
+        Matcher m = p.matcher("quicotte@gmail.com");
+        m.find();
+        for(int i=0;i<=m.groupCount();i++){
+            System.out.println( i + " " + m.group(i) );
+        }
+    }
+    
+//    @Test
+    public void regexMatchesOK(){
+        
+        // Check date validity ( sans années bisextiles, jour<30/31, ... )
+        assertTrue( "30/4/2020".matches("[0-9]{1,2}/[0-9]{1,2}/[0-9]{4}") );
+
+        // Check email ok : \\p{Alnum} = Alpha-numérique, Apha et Digit
+        assertTrue( "quicotte@gmail.com".matches("[\\p{Alnum}]{2,}@[a-zA-Z0-9_-]{2,}.[a-z]{2,}") );
+
+        // Check format tel ok
+        String tel = "0665831322";
+        String regex="[0][1-8][0-9]{8}";
+        assertTrue( tel.matches(regex) );
+    }
+    
+//    @Test
     public void test1(){
         
         String[] couleurs = "rouge,vert,bleu".split(",");
