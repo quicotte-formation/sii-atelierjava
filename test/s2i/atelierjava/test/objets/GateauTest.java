@@ -22,11 +22,14 @@ public class GateauTest {
        
         System.out.println("Type de farine:" + gateau2.getTypeFarine());
         
-        gateau1.setProportionBeure(20);
         gateau1.setProportionFarine(80);
         gateau1.setProportionSucre(10);
+        gateau1.setProportionBeure(800);
         
-        gateau1.preparer();
-        gateau2.preparer();
+        gateau1.afficher();
+        gateau2.afficher();
+        gateau2.mangerLaMoitie();
+        gateau2.mangerLaMoitie();
+        gateau2.afficher();
     }
 }
