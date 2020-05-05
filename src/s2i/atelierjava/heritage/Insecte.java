@@ -9,7 +9,6 @@ package s2i.atelierjava.heritage;
  *
  * @author quico
  */
-public class FlamandRose extends Oiseau{
+public class Insecte extends Animal{
     
-
 }

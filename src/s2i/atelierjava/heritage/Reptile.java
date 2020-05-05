@@ -9,7 +9,12 @@ package s2i.atelierjava.heritage;
  *
  * @author quico
  */
-public class FlamandRose extends Oiseau{
-    
+public class Reptile extends Animal{
 
+    @Override
+    public void avancer() {
+        this.z += 10;
+    }
+    
+    
 }
