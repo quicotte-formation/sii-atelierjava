@@ -22,15 +22,21 @@ public class BoutonSelecteur {
         return valeur;
     }
 
-    public void augmenter(){
+    public boolean augmenter(){
         if(this.valeur<this.limiteMax){
             this.valeur++;
+            return true;
         }
+        
+        return false;
     }
     
-    public void diminuer(){
+    public boolean diminuer(){
         if(this.valeur>=1){
             this.valeur--;
+            return true;
         }
+        // Y PAS EU DE RETURN ; ) => else serait superflu
+        return false;
     }       
 }
