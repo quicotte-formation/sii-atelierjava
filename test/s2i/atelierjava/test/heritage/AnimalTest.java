@@ -6,8 +6,10 @@
 package s2i.atelierjava.test.heritage;
 
 import java.util.ArrayList;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 import s2i.atelierjava.heritage.Animal;
+import s2i.atelierjava.heritage.Autruche;
 import s2i.atelierjava.heritage.FlamandRose;
 import s2i.atelierjava.heritage.Insecte;
 import s2i.atelierjava.heritage.Mammifere;
@@ -22,6 +24,13 @@ import s2i.atelierjava.heritage.Reptile;
 public class AnimalTest {
     
     @Test
+    public void verifieAutrucheNoVollePasQuandElleAvance(){
+        Autruche a = new Autruche();
+        a.avancer();
+        Assert.assertEquals( a.getY(), 0 );
+    }
+    
+//    @Test
     public void testListeGenerique(){
         
         ArrayList<Animal> animaux = new ArrayList<>();
