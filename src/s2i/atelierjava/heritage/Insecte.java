@@ -10,5 +10,12 @@ package s2i.atelierjava.heritage;
  * @author quico
  */
 public class Insecte extends Animal{
+
+    @Override
+    public void avancer() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+
     
 }

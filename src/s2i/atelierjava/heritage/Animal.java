@@ -9,15 +9,13 @@ package s2i.atelierjava.heritage;
  *
  * @author quico
  */
-public class Animal extends EtreVivant{
+public abstract class Animal extends EtreVivant{
     
     public void affiche(){
         System.out.println("ANIMAL AFFICHE");
     }
     
-    public void avancer(){
-        this.z ++;
-    }
+    abstract public void avancer();
 
     @Override
     public String toString() {
