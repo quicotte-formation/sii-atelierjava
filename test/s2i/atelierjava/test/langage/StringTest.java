@@ -9,6 +9,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import static org.testng.Assert.*;
 import org.testng.annotations.Test;
+import s2i.atelierjava.heritage.Poisson;
 
 /**
  *
@@ -17,6 +18,12 @@ import org.testng.annotations.Test;
 public class StringTest {
     
     @Test
+    public void testToString(){
+        Poisson p = new Poisson();
+        System.out.println( p );
+    }
+    
+//    @Test
     public void splitDateOK(){
         Pattern p = Pattern.compile("([0-9]{1,2})/([0-9]{1,2})/([0-9]{4})");
         Matcher m = p.matcher("30/4/2020");
@@ -26,7 +33,7 @@ public class StringTest {
         assertEquals( m.group(3) , "2020");
     }
     
-    @Test
+//    @Test
     public void regexSplitOK(){
         Pattern p = Pattern.compile("([\\p{Alnum}]{2,}@)([a-zA-Z0-9_-]{2,}.[a-z]{2,})");
         Matcher m = p.matcher("quicotte@gmail.com");

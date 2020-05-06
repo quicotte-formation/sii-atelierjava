@@ -12,9 +12,21 @@ package s2i.atelierjava.heritage;
 public class Poisson extends Animal{
 
     @Override
+    public void affiche() {
+        super.affiche();
+        System.out.println("POISSON AFFICHE");
+    }
+    
+    @Override
     public void avancer() {
         this.z += 5;
         this.y -= 5;
     }
+
+    @Override
+    public String toString() {
+        return "BLOU BLOU BLOU";
+    }
+    
     
 }

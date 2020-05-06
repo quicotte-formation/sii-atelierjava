@@ -23,14 +23,14 @@ import s2i.atelierjava.heritage.Reptile;
  */
 public class AnimalTest {
     
-    @Test
+//    @Test
     public void verifieAutrucheNoVollePasQuandElleAvance(){
         Autruche a = new Autruche();
         a.avancer();
         Assert.assertEquals( a.getY(), 0 );
     }
     
-//    @Test
+    @Test
     public void testListeGenerique(){
         
         ArrayList<Animal> animaux = new ArrayList<>();

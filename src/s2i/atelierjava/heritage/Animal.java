@@ -11,7 +11,18 @@ package s2i.atelierjava.heritage;
  */
 public class Animal extends EtreVivant{
     
+    public void affiche(){
+        System.out.println("ANIMAL AFFICHE");
+    }
+    
     public void avancer(){
         this.z ++;
     }
+
+    @Override
+    public String toString() {
+        return "TOSTRING DE Animal";
+    }
+    
+    
 }
